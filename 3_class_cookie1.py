@@ -10,17 +10,28 @@ class Cookie:
         # self.color is gonna apply to the specific instance of color we are passing
         self.color = color
 
+    # ALONG with constructor we can use other methods to do other things with this cookie class.
+    def get_color(self):
+        return self.color
+    
+    def set_color(self, color):
+        self.color = color
+
 # variable_name = class(argument)
 #  this green gets passed to the constructor -> which creates a green cookie
 cookie_one = Cookie("green")
 #  constructor passes itself (self) a new cookie -> which is blue
 cookie_two = Cookie("blue")
 
-#  so that is how we are able to create a two different cookie's using a same class.
 
+# print("Statemtn: ", Object.function/method)
+print ("Cookie one is: ",cookie_one.get_color())
+print ('Cookie two is: ',cookie_two.get_color())
+
+#  so that is how we are able to create a two different cookie's using a same class.
 #  It's using same dough as constructor -> using self - > to use two different colors to bake green & purple cookie
 
+cookie_one.set_color("Yellow")
 
-# ALONG eith constructor we can use other methods to do other things with this cookie class.
-
-# start tomorrow
+print ("Cookie one is now: ",cookie_one.get_color())
+print("Cookie two still is: ",cookie_two.get_color())
