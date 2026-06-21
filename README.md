@@ -7,16 +7,19 @@ An indexed log of concepts covered in this repo, organized by category.
 ## Index
 
 1. [Python Basics](#1-python-basics)
-2. [Algorithm Complexity (Big O)](#2-algorithm-complexity-big-o)
-3. [Object-Oriented Programming](#3-object-oriented-programming)
-4. [Data Structures — Linked List](#4-data-structures--linked-list)
-5. [Memory & References (Pointers)](#5-memory--references-pointers)
+2. [Data Types](#2-data-types)
+3. [Algorithm Complexity (Big O)](#3-algorithm-complexity-big-o)
+4. [Object-Oriented Programming](#4-object-oriented-programming)
+5. [Data Structures — Linked List (Skeleton)](#5-data-structures--linked-list-skeleton)
+6. [Arrays](#6-arrays)
+7. [Memory & References (Pointers)](#7-memory--references-pointers)
+8. [Linked List (Implementation)](#8-linked-list-implementation)
 
 ---
 
 ## 1. Python Basics
 
-**File:** [`1_intro.py`](1_intro.py)
+**File:** [`1_intro.py`](1_intro.py) — **Done**
 
 - Running a simple Python program
 - `print()` for output
@@ -24,19 +27,28 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 2. Algorithm Complexity (Big O)
+## 2. Data Types
 
-**File:** [`2_BigO.py`](2_BigO.py)
+**File:** [`2_dataTypes.py`](2_dataTypes.py) — *Not yet started*
 
-- *Planned / not yet started*
+- *Planned*
+- Python built-in data types and how they behave
+
+---
+
+## 3. Algorithm Complexity (Big O)
+
+**File:** [`3_BigO.py`](3_BigO.py) — *Not yet started*
+
+- *Planned*
 - Time and space complexity notation
 - How to compare algorithm efficiency
 
 ---
 
-## 3. Object-Oriented Programming
+## 4. Object-Oriented Programming
 
-**File:** [`3_class_cookie1.py`](3_class_cookie1.py)
+**File:** [`4_class_cookie1.py`](4_class_cookie1.py) — **Done**
 
 - Building data structures with **classes**
 - **`__init__`** constructor and the **`self`** keyword
@@ -44,16 +56,16 @@ An indexed log of concepts covered in this repo, organized by category.
 - **Methods** vs standalone functions
 - Creating multiple **instances** from one class (`Cookie("green")`, `Cookie("blue")`)
 - **Getter** and **setter** methods (`get_color`, `set_color`)
-- How changing one instance does not affect another
+- How changing one instance does not affect another (each instance has its own state)
 
 ---
 
-## 4. Data Structures — Linked List
+## 5. Data Structures — Linked List (Skeleton)
 
-**File:** [`4_classLinkedList.py`](4_classLinkedList.py)
+**File:** [`5_classLinkedList.py`](5_classLinkedList.py) — *In progress*
 
-- Designing a `LinkedList` class
-- Core operations (skeleton / in progress):
+- Started designing a `LinkedList` class (skeleton only)
+- Planned core operations:
   - `append(value)` — add at the end
   - `pop()` — remove from the end
   - `prepend(value)` — add at the start
@@ -62,24 +74,57 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 5. Memory & References (Pointers)
+## 6. Arrays
 
-**File:** [`5_pointers.py`](5_pointers.py)
+**File:** [`6_array.py`](6_array.py) — *Not yet started*
 
-- Variables as **references** to objects in memory
+- *Planned*
+- Array data structure and operations
+
+---
+
+## 7. Memory & References (Pointers)
+
+### Part 1 — Immutable types (integers)
+
+**File:** [`7_pointers1.py`](7_pointers1.py) — **Done**
+
+- Variables are **references** to objects in memory
 - Using **`id()`** to inspect memory addresses
-- **Assignment** (`num2 = num1`) — both names point to the same object
-- **Reassignment** (`num2 = 22`) — creates a new object; `num1` is unchanged
-- Python integers are **immutable** — updating one variable does not overwrite another’s value
+- **Assignment** (`num2 = num1`) — both names point to the same object (same `id`)
+- **Reassignment** (`num2 = 22`) — creates a new object; `num1` stays unchanged
+- Python integers are **immutable** — updating one variable does not overwrite another's value
+
+### Part 2 — Mutable types (dictionaries)
+
+**File:** [`8_pointers2.py`](8_pointers2.py) — **Done**
+
+- **Mutable** objects behave differently from immutable ones
+- `dict2 = dict1` — both variables reference the **same** dictionary (same `id`)
+- Modifying through one name (`dict2['value'] = 22`) **changes the object for both** names
+- Key takeaway: assignment shares a reference; mutating the object affects all names pointing to it
+
+---
+
+## 8. Linked List (Implementation)
+
+**File:** [`9_LinkedList1.py`](9_LinkedList1.py) — *Not yet started*
+
+- *Planned*
+- Full linked list implementation
 
 ---
 
 ## File Map
 
-| # | File | Topic |
-|---|------|--------|
-| 1 | `1_intro.py` | Python basics |
-| 2 | `2_BigO.py` | Big O notation |
-| 3 | `3_class_cookie1.py` | Classes & OOP |
-| 4 | `4_classLinkedList.py` | Linked list |
-| 5 | `5_pointers.py` | Memory & references |
+| # | File | Topic | Status |
+|---|------|--------|--------|
+| 1 | `1_intro.py` | Python basics | Done |
+| 2 | `2_dataTypes.py` | Data types | Not started |
+| 3 | `3_BigO.py` | Big O notation | Not started |
+| 4 | `4_class_cookie1.py` | Classes & OOP | Done |
+| 5 | `5_classLinkedList.py` | Linked list (skeleton) | In progress |
+| 6 | `6_array.py` | Arrays | Not started |
+| 7 | `7_pointers1.py` | Memory & references (immutable) | Done |
+| 8 | `8_pointers2.py` | Memory & references (mutable) | Done |
+| 9 | `9_LinkedList1.py` | Linked list (implementation) | Not started |
