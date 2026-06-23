@@ -8,12 +8,16 @@ An indexed log of concepts covered in this repo, organized by category.
 
 1. [Python Basics](#1-python-basics)
 2. [Data Types](#2-data-types)
-3. [Algorithm Complexity (Big O)](#3-algorithm-complexity-big-o)
-4. [Object-Oriented Programming](#4-object-oriented-programming)
-5. [Data Structures — Linked List (Skeleton)](#5-data-structures--linked-list-skeleton)
-6. [Arrays](#6-arrays)
-7. [Memory & References (Pointers)](#7-memory--references-pointers)
-8. [Linked List (Implementation)](#8-linked-list-implementation)
+3. [Booleans & None](#3-booleans--none)
+4. [Type Checking (`type` & `isinstance`)](#4-type-checking-type--isinstance)
+5. [Type Conversion](#5-type-conversion)
+6. [Algorithm Complexity (Big O)](#6-algorithm-complexity-big-o)
+7. [Object-Oriented Programming](#7-object-oriented-programming)
+8. [Arrays](#8-arrays)
+9. [Data Structures — Linked List (Skeleton)](#9-data-structures--linked-list-skeleton)
+10. [Memory & References (Pointers) — Part 1](#10-memory--references-pointers--part-1)
+11. [Memory & References (Pointers) — Part 2](#11-memory--references-pointers--part-2)
+12. [Linked List (Implementation)](#12-linked-list-implementation)
 
 ---
 
@@ -50,13 +54,52 @@ An indexed log of concepts covered in this repo, organized by category.
 - **Readable number literals** — underscores allowed for grouping (e.g. `7_90_000` → `790000`)
 - **Float imprecision** — computers store decimals approximately (`0.1 + 0.2` prints `0.30000000000000004`)
 - **Cross-type comparison** — `100 == "100"` is `False` because types differ
-- **Type conversion** — cast with `int()`, e.g. `x == int(y)` to compare after converting a string to an integer
+- **Basic type conversion** — cast with `int()`, e.g. `x == int(y)` to compare after converting a string to an integer
 
 ---
 
-## 3. Algorithm Complexity (Big O)
+## 3. Booleans & None
 
-**File:** [`3_BigO.py`](3_BigO.py) — *Not yet started*
+**File:** [`3_Booleans_NoneValue.py`](3_Booleans_NoneValue.py) — **Done**
+
+- **Booleans** — only two values: `True` or `False` (capitalization matters)
+- Booleans are the foundation of **decision-making** in code
+- **Comparison expressions** produce booleans (e.g. `age >= 18` → `True`, `age <= 18` → `True` for the same age — both can be true at boundary values)
+- **`None`** — represents the **absence of value**; not zero, not empty text — just nothing
+- **`None` vs `""` vs `0`**:
+  - `""` is an empty string (a value of type `str`)
+  - `0` is integer zero (a value of type `int`)
+  - `None` means there is no value at all
+- Practical example: `cart_count = 0` means the cart exists with 0 items; `cart_count = None` means the count is unknown or not applicable
+- Common in frameworks like Django when a value may not exist yet
+
+---
+
+## 4. Type Checking (`type` & `isinstance`)
+
+**File:** [`4_type_isinstance.py`](4_type_isinstance.py) — **Done**
+
+- **`type()`** — inspect what type a value is (e.g. `type("hello")` → `<class 'str'>`, `type(None)` → `<class 'NoneType'>`)
+- Useful for **debugging** when something isn't behaving as expected
+- **`isinstance()`** — check if a value is a specific type (e.g. `isinstance(age, int)` → `True`, `isinstance(age, str)` → `False`)
+- **`isinstance()` with a tuple** — check if a value is one of several types (e.g. `isinstance(age, (int, float))`)
+- Helpful when you receive data and need to handle different types differently
+
+---
+
+## 5. Type Conversion
+
+**File:** [`5_typeConversion.py`](5_typeConversion.py) — *Not yet started*
+
+- *Planned*
+- Converting between types (`int()`, `float()`, `str()`, etc.)
+- When and why to convert types safely
+
+---
+
+## 6. Algorithm Complexity (Big O)
+
+**File:** [`6_BigO.py`](6_BigO.py) — *Not yet started*
 
 - *Planned*
 - Time and space complexity notation
@@ -64,9 +107,9 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 4. Object-Oriented Programming
+## 7. Object-Oriented Programming
 
-**File:** [`4_class_cookie1.py`](4_class_cookie1.py) — **Done**
+**File:** [`7_class_cookie1.py`](7_class_cookie1.py) — **Done**
 
 - Building data structures with **classes**
 - **`__init__`** constructor and the **`self`** keyword
@@ -78,9 +121,18 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 5. Data Structures — Linked List (Skeleton)
+## 8. Arrays
 
-**File:** [`5_classLinkedList.py`](5_classLinkedList.py) — *In progress*
+**File:** [`8_array.py`](8_array.py) — *Not yet started*
+
+- *Planned*
+- Array data structure and operations
+
+---
+
+## 9. Data Structures — Linked List (Skeleton)
+
+**File:** [`9_classLinkedList.py`](9_classLinkedList.py) — *In progress*
 
 - Started designing a `LinkedList` class (skeleton only)
 - Planned core operations:
@@ -92,20 +144,9 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 6. Arrays
+## 10. Memory & References (Pointers) — Part 1
 
-**File:** [`6_array.py`](6_array.py) — *Not yet started*
-
-- *Planned*
-- Array data structure and operations
-
----
-
-## 7. Memory & References (Pointers)
-
-### Part 1 — Immutable types (integers)
-
-**File:** [`7_pointers1.py`](7_pointers1.py) — **Done**
+**File:** [`10_pointers1.py`](10_pointers1.py) — **Done**
 
 - Variables are **references** to objects in memory
 - Using **`id()`** to inspect memory addresses
@@ -113,9 +154,11 @@ An indexed log of concepts covered in this repo, organized by category.
 - **Reassignment** (`num2 = 22`) — creates a new object; `num1` stays unchanged
 - Python integers are **immutable** — updating one variable does not overwrite another's value
 
-### Part 2 — Mutable types (dictionaries)
+---
 
-**File:** [`8_pointers2.py`](8_pointers2.py) — **Done**
+## 11. Memory & References (Pointers) — Part 2
+
+**File:** [`11_pointers2.py`](11_pointers2.py) — **Done**
 
 - **Mutable** objects behave differently from immutable ones
 - `dict2 = dict1` — both variables reference the **same** dictionary (same `id`)
@@ -124,9 +167,9 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 8. Linked List (Implementation)
+## 12. Linked List (Implementation)
 
-**File:** [`9_LinkedList1.py`](9_LinkedList1.py) — *Not yet started*
+**File:** [`12_LinkedList1.py`](12_LinkedList1.py) — *Not yet started*
 
 - *Planned*
 - Full linked list implementation
@@ -139,10 +182,13 @@ An indexed log of concepts covered in this repo, organized by category.
 |---|------|--------|--------|
 | 1 | `1_intro.py` | Python basics | Done |
 | 2 | `2_dataTypes.py` | Data types | Done |
-| 3 | `3_BigO.py` | Big O notation | Not started |
-| 4 | `4_class_cookie1.py` | Classes & OOP | Done |
-| 5 | `5_classLinkedList.py` | Linked list (skeleton) | In progress |
-| 6 | `6_array.py` | Arrays | Not started |
-| 7 | `7_pointers1.py` | Memory & references (immutable) | Done |
-| 8 | `8_pointers2.py` | Memory & references (mutable) | Done |
-| 9 | `9_LinkedList1.py` | Linked list (implementation) | Not started |
+| 3 | `3_Booleans_NoneValue.py` | Booleans & None | Done |
+| 4 | `4_type_isinstance.py` | Type checking (`type` & `isinstance`) | Done |
+| 5 | `5_typeConversion.py` | Type conversion | Not started |
+| 6 | `6_BigO.py` | Big O notation | Not started |
+| 7 | `7_class_cookie1.py` | Classes & OOP | Done |
+| 8 | `8_array.py` | Arrays | Not started |
+| 9 | `9_classLinkedList.py` | Linked list (skeleton) | In progress |
+| 10 | `10_pointers1.py` | Memory & references (immutable) | Done |
+| 11 | `11_pointers2.py` | Memory & references (mutable) | Done |
+| 12 | `12_LinkedList1.py` | Linked list (implementation) | Not started |
