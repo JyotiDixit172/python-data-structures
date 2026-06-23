@@ -29,10 +29,28 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ## 2. Data Types
 
-**File:** [`2_dataTypes.py`](2_dataTypes.py) — *Not yet started*
+**File:** [`2_dataTypes.py`](2_dataTypes.py) — **Done**
 
-- *Planned*
-- Python built-in data types and how they behave
+- Why **types** matter — different types behave differently (e.g. name → text, age → number)
+- Four basic types:
+  - **`str`** (string) — text, e.g. `"alex"`
+  - **`int`** (integer) — whole numbers, e.g. `25`
+  - **`float`** — decimal numbers, e.g. `19.99`
+  - **`None`** — represents no value (note: `"None"` in quotes is a string, not the actual `None` type)
+- **`float` vs `Decimal`**:
+  - `float` uses binary floating-point — fast (hardware-optimized) but imprecise for some decimals (e.g. `0.1 + 0.2` ≠ `0.3`)
+  - `Decimal` stores exact base-10 values — slower (software) but precise; preferred for money and financial math
+- **String quoting** — use alternate quote style when text contains quotes (e.g. `'She said "Hello" !!'`)
+- **Common string methods**:
+  - `.lower()`, `.upper()`, `.strip()`, `.replace(old, new)`
+  - `.startswith()`, `.endswith()`
+  - `in` operator to check if a substring exists (e.g. `"@" in email`)
+- **Strings vs numbers** — numbers in quotes are strings (`"100"`), not integers; `"100" + "100"` concatenates, `100 + 100` adds
+- **Integers** — can be positive, negative, or zero
+- **Readable number literals** — underscores allowed for grouping (e.g. `7_90_000` → `790000`)
+- **Float imprecision** — computers store decimals approximately (`0.1 + 0.2` prints `0.30000000000000004`)
+- **Cross-type comparison** — `100 == "100"` is `False` because types differ
+- **Type conversion** — cast with `int()`, e.g. `x == int(y)` to compare after converting a string to an integer
 
 ---
 
@@ -120,7 +138,7 @@ An indexed log of concepts covered in this repo, organized by category.
 | # | File | Topic | Status |
 |---|------|--------|--------|
 | 1 | `1_intro.py` | Python basics | Done |
-| 2 | `2_dataTypes.py` | Data types | Not started |
+| 2 | `2_dataTypes.py` | Data types | Done |
 | 3 | `3_BigO.py` | Big O notation | Not started |
 | 4 | `4_class_cookie1.py` | Classes & OOP | Done |
 | 5 | `5_classLinkedList.py` | Linked list (skeleton) | In progress |
