@@ -18,6 +18,12 @@ An indexed log of concepts covered in this repo, organized by category.
 10. [Memory & References (Pointers) — Part 1](#10-memory--references-pointers--part-1)
 11. [Memory & References (Pointers) — Part 2](#11-memory--references-pointers--part-2)
 12. [Linked List (Implementation)](#12-linked-list-implementation)
+13. [User Input](#13-user-input)
+14. [Escape Characters](#14-escape-characters)
+15. [Customizing `print()`](#15-customizing-print)
+16. [String Formatting (f-strings)](#16-string-formatting-f-strings)
+17. [Formatting Methods (`.format()` & `%`)](#17-formatting-methods-format--)
+18. [Variables](#18-variables)
 
 ---
 
@@ -169,10 +175,86 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ## 12. Linked List (Implementation)
 
-**File:** [`12_LinkedList1.py`](12_LinkedList1.py) — *Not yet started*
+**File:** [`12_LinkedList1.py`](After%20Module%20Completion/12_LinkedList1.py) — *Not yet started*
 
 - *Planned*
 - Full linked list implementation
+
+---
+
+## 13. User Input
+
+**File:** [`6_input.py`](6_input.py) — **Done**
+
+- **`input()`** — pauses the program and waits for the user to type something
+- **`input()` always returns a `str`** — even if the user types digits (e.g. `"25"`, not `25`)
+- Use **`type()`** to confirm what `input()` returned
+- Convert user input with **`int()`** (or other casts) when you need a number: `age = int(input("Enter your age: "))`
+- **f-strings with input** — combine `input()` and f-strings for personalized output (e.g. `print(f"Hello, {name}!")`)
+
+---
+
+## 14. Escape Characters
+
+**File:** [`7_EscapeCharacters.py`](7_EscapeCharacters.py) — **Done**
+
+- **Escape sequences** — special character combos inside strings that start with `\`
+- **`\n`** — newline (starts the next output on a new line)
+- **`\t`** — tab (adds horizontal spacing, useful for aligned columns)
+- **`\\`** — literal backslash (e.g. file paths like `C:\\Users\\Alex`)
+- **`\"`** — literal double quote inside a double-quoted string (e.g. `She said \"hello\"`)
+
+---
+
+## 15. Customizing `print()`
+
+**File:** [`8_customizePrint.py`](8_customizePrint.py) — **Done**
+
+- **`sep`** — controls what goes *between* multiple arguments (default is a space; e.g. `sep="-"` → `2024-01-15`)
+- **`end`** — controls what goes *after* the output (default is `\n`; e.g. `end="...."` keeps the next print on the same line)
+- **`print()` returns `None`** — it is a side-effect function (output), not a value-producing function; don't use it inside comprehensions expecting a value
+- **`flush=True`** — forces output immediately instead of buffering; useful in long-running loops or progress indicators so text appears right away
+- **Unpacking with `*`** — `print(*[1, 2, 3], sep=",")` spreads a list into separate arguments
+
+---
+
+## 16. String Formatting (f-strings)
+
+**File:** [`9_StringFormatting.py`](9_StringFormatting.py) — **Done**
+
+- **f-strings** — prefix a string with `f` and embed expressions in `{}` (e.g. `f"Hello, {name}!"`)
+- **Expressions inside `{}`** — can do math (`f"Total: ${price * quantity}"`) or call methods (`f"{name.upper()}"`)
+- **Number formatting in f-strings**:
+  - `{price:.2f}` — two decimal places
+  - `{population:,}` — thousands separators
+  - `{rate:.1%}` — percentage with one decimal place
+- **Multi-line f-strings** — triple-quoted f-strings work for emails, messages, and templates
+- **Older styles** (still seen in legacy code):
+  - `.format()` — `"Hello, {}! Balance: ${:.2f}".format(name, balance)`
+  - `%` formatting — `"Hello, %s! Balance: $%.2f" % (name, balance)`
+
+---
+
+## 17. Formatting Methods (`.format()` & `%`)
+
+**File:** [`10_FormattingMethods.py`](10_FormattingMethods.py) — *Not yet started*
+
+- *Planned*
+- Deeper practice with `.format()` and `%` style formatting
+
+---
+
+## 18. Variables
+
+**File:** [`11_Variables.py`](11_Variables.py) — *In progress*
+
+- A **variable** is a name that points to a value — created with `=` (no special keywords, no type declarations)
+- **`=` means assignment** — "store the value on the right under the name on the left" (not mathematical equality)
+- **Reassignment with math** — `x = x + 1` takes the current value, computes, and stores back (same for `count = count + 5`, etc.)
+- **Basic examples** — `username = "alex"`, `age = 25`, `price = 19.99`, `is_active = True`
+- **Naming rules** (started):
+  1. Must start with a letter or `_` (underscore)
+  2. Only letters, numbers, and underscores after the first character
 
 ---
 
@@ -192,3 +274,9 @@ An indexed log of concepts covered in this repo, organized by category.
 | 10 | `10_pointers1.py` | Memory & references (immutable) | Done |
 | 11 | `11_pointers2.py` | Memory & references (mutable) | Done |
 | 12 | `12_LinkedList1.py` | Linked list (implementation) | Not started |
+| 13 | `6_input.py` | User input | Done |
+| 14 | `7_EscapeCharacters.py` | Escape characters | Done |
+| 15 | `8_customizePrint.py` | Customizing `print()` | Done |
+| 16 | `9_StringFormatting.py` | String formatting (f-strings) | Done |
+| 17 | `10_FormattingMethods.py` | Formatting methods (`.format()` & `%`) | Not started |
+| 18 | `11_Variables.py` | Variables | In progress |
