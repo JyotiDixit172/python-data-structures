@@ -13,17 +13,18 @@ An indexed log of concepts covered in this repo, organized by category.
 5. [Type Conversion](#5-type-conversion)
 6. [Algorithm Complexity (Big O)](#6-algorithm-complexity-big-o)
 7. [Object-Oriented Programming](#7-object-oriented-programming)
-8. [Arrays](#8-arrays)
-9. [Data Structures — Linked List (Skeleton)](#9-data-structures--linked-list-skeleton)
-10. [Memory & References (Pointers) — Part 1](#10-memory--references-pointers--part-1)
-11. [Memory & References (Pointers) — Part 2](#11-memory--references-pointers--part-2)
-12. [Linked List (Implementation)](#12-linked-list-implementation)
-13. [User Input](#13-user-input)
-14. [Escape Characters](#14-escape-characters)
-15. [Customizing `print()`](#15-customizing-print)
-16. [String Formatting (f-strings)](#16-string-formatting-f-strings)
-17. [Formatting Methods (`.format()` & `%`)](#17-formatting-methods-format--)
-18. [Variables](#18-variables)
+8. [Data Structures — Linked List (Skeleton)](#8-data-structures--linked-list-skeleton)
+9. [Memory & References (Pointers) — Part 1](#9-memory--references-pointers--part-1)
+10. [Memory & References (Pointers) — Part 2](#10-memory--references-pointers--part-2)
+11. [Linked List (Implementation)](#11-linked-list-implementation)
+12. [User Input](#12-user-input)
+13. [Escape Characters](#13-escape-characters)
+14. [Customizing `print()`](#14-customizing-print)
+15. [String Formatting (f-strings)](#15-string-formatting-f-strings)
+16. [Formatting Methods (`.format()` & `%`)](#16-formatting-methods-format--)
+17. [Variables](#17-variables)
+18. [Looping Helper — `enumerate()`](#18-looping-helper--enumerate)
+19. [Hashmaps / Dictionaries — Intro](#19-hashmaps--dictionaries--intro)
 
 ---
 
@@ -95,11 +96,15 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ## 5. Type Conversion
 
-**File:** [`5_typeConversion.py`](5_typeConversion.py) — *Not yet started*
+**File:** [`5_typeConversion.py`](5_typeConversion.py) — **Done**
 
-- *Planned*
-- Converting between types (`int()`, `float()`, `str()`, etc.)
-- When and why to convert types safely
+- **`str` → `int`** — `int("25")` → `25`
+- **`int` → `str`** — `str(10)` → `"10"`
+- **`str` → `float`** — `float("19.99")` → `19.99`
+- **Why this matters** — user input (and form/API data) is almost always a `str`, even when it "looks like" a number
+  - `user_input + 1` would crash if `user_input` is a string ("can't add string and number")
+  - Convert first: `age = int(user_input)`, then `next_year = age + 1` works
+- Core takeaway: convert types **before** doing math or comparisons, not after the error
 
 ---
 
@@ -127,16 +132,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 8. Arrays
-
-**File:** [`8_array.py`](8_array.py) — *Not yet started*
-
-- *Planned*
-- Array data structure and operations
-
----
-
-## 9. Data Structures — Linked List (Skeleton)
+## 8. Data Structures — Linked List (Skeleton)
 
 **File:** [`9_classLinkedList.py`](9_classLinkedList.py) — *In progress*
 
@@ -150,7 +146,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 10. Memory & References (Pointers) — Part 1
+## 9. Memory & References (Pointers) — Part 1
 
 **File:** [`10_pointers1.py`](10_pointers1.py) — **Done**
 
@@ -162,7 +158,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 11. Memory & References (Pointers) — Part 2
+## 10. Memory & References (Pointers) — Part 2
 
 **File:** [`11_pointers2.py`](11_pointers2.py) — **Done**
 
@@ -173,7 +169,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 12. Linked List (Implementation)
+## 11. Linked List (Implementation)
 
 **File:** [`12_LinkedList1.py`](After%20Module%20Completion/12_LinkedList1.py) — *Not yet started*
 
@@ -182,7 +178,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 13. User Input
+## 12. User Input
 
 **File:** [`6_input.py`](6_input.py) — **Done**
 
@@ -194,7 +190,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 14. Escape Characters
+## 13. Escape Characters
 
 **File:** [`7_EscapeCharacters.py`](7_EscapeCharacters.py) — **Done**
 
@@ -206,7 +202,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 15. Customizing `print()`
+## 14. Customizing `print()`
 
 **File:** [`8_customizePrint.py`](8_customizePrint.py) — **Done**
 
@@ -218,7 +214,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 16. String Formatting (f-strings)
+## 15. String Formatting (f-strings)
 
 **File:** [`9_StringFormatting.py`](9_StringFormatting.py) — **Done**
 
@@ -235,7 +231,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 17. Formatting Methods (`.format()` & `%`)
+## 16. Formatting Methods (`.format()` & `%`)
 
 **File:** [`10_FormattingMethods.py`](10_FormattingMethods.py) — *Not yet started*
 
@@ -244,7 +240,7 @@ An indexed log of concepts covered in this repo, organized by category.
 
 ---
 
-## 18. Variables
+## 17. Variables
 
 **File:** [`11_Variables.py`](11_Variables.py) — *In progress*
 
@@ -255,6 +251,29 @@ An indexed log of concepts covered in this repo, organized by category.
 - **Naming rules** (started):
   1. Must start with a letter or `_` (underscore)
   2. Only letters, numbers, and underscores after the first character
+  3. *(rule 3 not filled in yet)*
+
+---
+
+## 18. Looping Helper — `enumerate()`
+
+**File:** [`12_enumerate.py`](12_enumerate.py) — **Done**
+
+- **`enumerate()`** — a built-in function that works on any **iterable** (lists, tuples, etc.)
+- Not related to hashmaps or dictionaries — it's purely a **looping helper**
+- Adds an automatic counter while looping, so you get `(index, value)` pairs in one go
+- Pattern: `for i, n in enumerate(nums): print(i, n)`
+- Saves you from manually tracking a separate counter variable inside a loop
+
+---
+
+## 19. Hashmaps / Dictionaries — Intro
+
+**File:** [`13_hashmap.py`](13_hashmap.py) — *Not yet started*
+
+- *Planned*
+- File currently holds only a placeholder comment (using `enumerate()` to print indexes alongside hashmap entries)
+- Next step: actually build out dictionary basics (creation, key/value access, iteration) before connecting it back to `enumerate()`
 
 ---
 
@@ -266,17 +285,18 @@ An indexed log of concepts covered in this repo, organized by category.
 | 2 | `2_dataTypes.py` | Data types | Done |
 | 3 | `3_Booleans_NoneValue.py` | Booleans & None | Done |
 | 4 | `4_type_isinstance.py` | Type checking (`type` & `isinstance`) | Done |
-| 5 | `5_typeConversion.py` | Type conversion | Not started |
+| 5 | `5_typeConversion.py` | Type conversion | Done |
 | 6 | `6_BigO.py` | Big O notation | Not started |
 | 7 | `7_class_cookie1.py` | Classes & OOP | Done |
-| 8 | `8_array.py` | Arrays | Not started |
-| 9 | `9_classLinkedList.py` | Linked list (skeleton) | In progress |
-| 10 | `10_pointers1.py` | Memory & references (immutable) | Done |
-| 11 | `11_pointers2.py` | Memory & references (mutable) | Done |
-| 12 | `12_LinkedList1.py` | Linked list (implementation) | Not started |
-| 13 | `6_input.py` | User input | Done |
-| 14 | `7_EscapeCharacters.py` | Escape characters | Done |
-| 15 | `8_customizePrint.py` | Customizing `print()` | Done |
-| 16 | `9_StringFormatting.py` | String formatting (f-strings) | Done |
-| 17 | `10_FormattingMethods.py` | Formatting methods (`.format()` & `%`) | Not started |
-| 18 | `11_Variables.py` | Variables | In progress |
+| 8 | `9_classLinkedList.py` | Linked list (skeleton) | In progress |
+| 9 | `10_pointers1.py` | Memory & references (immutable) | Done |
+| 10 | `11_pointers2.py` | Memory & references (mutable) | Done |
+| 11 | `12_LinkedList1.py` | Linked list (implementation) | Not started |
+| 12 | `6_input.py` | User input | Done |
+| 13 | `7_EscapeCharacters.py` | Escape characters | Done |
+| 14 | `8_customizePrint.py` | Customizing `print()` | Done |
+| 15 | `9_StringFormatting.py` | String formatting (f-strings) | Done |
+| 16 | `10_FormattingMethods.py` | Formatting methods (`.format()` & `%`) | Not started |
+| 17 | `11_Variables.py` | Variables | In progress |
+| 18 | `12_enumerate.py` | Looping helper — `enumerate()` | Done |
+| 19 | `13_hashmap.py` | Hashmaps / dictionaries — intro | Not started |
