@@ -24,5 +24,22 @@ count = count *2
 Naming Variables in Python:
 1. start with letetr or _ (underscore)
 2. Only letters, numbers and underscores.
-3. 
+3. Can't Use Python Keywords (if,for,class etc)
 """
+# Valid
+user_name = "alex"
+user2 = "alex"
+_private = "alex"
+
+# Invalid - Python will complain
+
+# 2user = "alex"      # Can't start with number
+# user-name = "alex"  # Can't use hyphens
+# class = "alex"      # Can't use keywords
+
+# Variables -> can chnage that's why they are called varaibles.
+status = "pending"
+print(status)
+status = "approved"
+print(status)
+status = "shipped"
