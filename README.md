@@ -252,6 +252,10 @@ An indexed log of concepts covered in this repo, organized by category.
   1. Must start with a letter or `_` (underscore)
   2. Only letters, numbers, and underscores after the first character
   3. *(rule 3 not filled in yet)*
+-**Variables can change -> That's why they are called variables**
+-**Rule of Value first assigned follows in Python** -> See ***15_MultipleAssignmentOperators.py***
+-**Python naming convention:** snake_case
+
 
 ---
 
@@ -274,6 +278,28 @@ An indexed log of concepts covered in this repo, organized by category.
 - *Planned*
 - File currently holds only a placeholder comment (using `enumerate()` to print indexes alongside hashmap entries)
 - Next step: actually build out dictionary basics (creation, key/value access, iteration) before connecting it back to `enumerate()`
+
+## 20. Batteries Included -> In built Libraries included
+Python comes with a large standard library, built-in modules for common tasks:
+-Working with files and directories
+-Making HTTP requests
+-Parsing JSON
+-Working with dates and times
+-Regular expressions
+And much more
+
+You don't need to install external packages for basic tasks. This makes getting started faster.
+
+## 21. Where Python Fits
+
+Python is used across many domains:
+- Web development — Django, FastAPI, Flask
+- Data science & ML — pandas, scikit-learn, TensorFlow
+- Automation & scripting — system administration, DevOps
+- APIs & microservices — backend services of all sizes
+
+It consistently ranks among the top 3 most popular languages in developer surveys. You're learning something widely used and in demand.
+
 
 ---
 
@@ -300,3 +326,5 @@ An indexed log of concepts covered in this repo, organized by category.
 | 17 | `11_Variables.py` | Variables | In progress |
 | 18 | `12_enumerate.py` | Looping helper — `enumerate()` | Done |
 | 19 | `13_hashmap.py` | Hashmaps / dictionaries — intro | Not started |
+| 20 | Batteries Included | In built Libraries | Just Read for Recap | Done |
+| 21 | Where Python Fits | Used across which Domains | Just Read for Recap |
